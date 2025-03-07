@@ -87,3 +87,36 @@ match string_var == "String" {
 loop {
     //loop body
 }
+
+## Shadowing
+Variables can be shadowed. They can be overwritten during compile time, and can revert to the original value,
+once the shadow scope is gone.
+let name = "value"; //name = "value"
+{
+    let name = "new value"; //name = "new value"
+}
+//name = "value"
+
+## Tuples
+Group data of different data types into one variable. The size of the tuple cannot be changed.
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+let (x, y, z) = tup;
+println!("{x}"); //prints 500
+let test = tup.1; //access data by index
+println!("{y}"); //prints 6.4
+
+## Arrays
+Group data of the same data type in one variable. The size of the array cannot be changed.
+let a = [1, 2, 3, 4, 5];
+let a: [i32; 5] = [1, 2, 3, 4, 5]; //data type = i32 and amount of values = 5
+let a: [2.3; 5] = [2.3, 2.3, 2.3, 2.3, 2.3] //specify each value to start at 2.3 and the amount of values = 5.
+a[0]; //access value at index 0
+
+## Functions
+Functions, are reusable pieces of code that has parameters that must have their type declared. They can also
+specify a return type.
+fn functionName(value: type, num: i32) -> i32 { //define a function with 2 parameters that returns a i32 value
+    //function body
+    println!("{value} and {num");
+}
+
